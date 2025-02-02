@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%; /* Растянуть кнопку на всю ширину */
+        }
+
+        .form-container button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form action="/admin/" method="post">
+        <label for="firstName">Admin Username:</label>
+        <input type="text" id="firstName" name="first_name" placeholder="Введите login" required>
+
+        <label for="lastName">Admin Password:</label>
+        <input type="text" id="lastName" name="last_name" placeholder="Введите password" required>
+        {% if prov == 1%}
+        <label for="f">Заполните все поля!</label>
+        {%endif%}
+        {% if prov == 4%}
+        <label for="f">Uncorrect login or password!</label>
+        {%endif%}
+        <button type="admin">Login</button>
+    </form>
+
+</div>
+
+</body>
+</html>
